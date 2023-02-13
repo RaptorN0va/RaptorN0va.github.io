@@ -3,21 +3,36 @@
     <title>Çekiliş Yap ama biz ürettik :D</title>
     <script>
       function chooseLine() {
+        var selectedOption = document.getElementById("optionSelect").value;
         var lines = document.getElementById("inputBox").value.split("\n");
         var chosenLine = "";
-        if (lines.includes("allah var") && lines.includes("allah yok")) {
+        if (selectedOption === "allah var") {
+          chosenLine = "allah var";
+        } else if (selectedOption === "allah yok") {
           chosenLine = "allah yok";
         } else {
-          chosenLine = lines[Math.floor(Math.random() * lines.length)];
+          if (lines.includes("allah var") && lines.includes("allah yok")) {
+            chosenLine = "allah yok";
+          } else {
+            chosenLine = lines[Math.floor(Math.random() * lines.length)];
+          }
         }
         document.getElementById("chosenLine").innerHTML = chosenLine;
       }
     </script>
   </head>
   <body>
-    <h2 style="text-align: left;">Allah Yok|Çekiliş Yap</h2>
+    <h2 style="text-align: center;">Allah Yok|Çekiliş Yap</h2>
+    <p>
+      Select an option:
+      <select id="optionSelect">
+        <option value="random">Random</option>
+        <option value="allah var">allah var</option>
+        <option value="allah yok">allah yok</option>
+      </select>
+    </p>
     <textarea id="inputBox" rows="10" cols="50"></textarea><br>
-    <button onclick="chooseLine()">Yap bakalım çekilişi aslan parçası</button><br>
+    <button onclick="chooseLine()">Yap Bakalım Çekilişi Aslan Parçası!</button><br>
     <p>Çekiliş Sonucu: <span id="chosenLine"></span></p>
   </body>
 </html>
