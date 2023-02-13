@@ -5,8 +5,8 @@
       function chooseLine() {
         var lines = document.getElementById("inputBox").value.split("\n");
         var chosenLine = "";
-        if (lines.includes("Allah var") && lines.includes("Allah yok")) {
-          chosenLine = "Allah yok";
+        if (lines.includes("allah var") && lines.includes("allah yok")) {
+          chosenLine = "allah yok";
         } else {
           chosenLine = lines[Math.floor(Math.random() * lines.length)];
         }
@@ -15,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h2 style="text-align: center;">Allah Yok|Çekiliş Yap</h2>
+    <h2 style="text-align: left;">Allah Yok|Çekiliş Yap</h2>
     <textarea id="inputBox" rows="10" cols="50"></textarea><br>
     <button onclick="chooseLine()">Yap bakalım çekilişi aslan parçası</button><br>
     <p>Çekiliş Sonucu: <span id="chosenLine"></span></p>
