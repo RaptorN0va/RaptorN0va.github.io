@@ -18,6 +18,16 @@
           }
         }
         document.getElementById("chosenLine").innerHTML = chosenLine;
+
+        var gifUrl = "";
+        if (chosenLine === "allah var") {
+          gifUrl = "https://66.media.tumblr.com/a53ce40a0638b544b67a52db04e4c0be/tumblr_pnv97oggLY1wyzsb5_500.gif";
+        } else if (chosenLine === "allah yok") {
+          gifUrl = "https://tenor.com/view/sexy-gif-23857983";
+        } else {
+          gifUrl = "https://tenor.com/view/recep-tayip-erdoğan-gif-21900946";
+        }
+        document.getElementById("gif").src = gifUrl;
       }
     </script>
   </head>
@@ -26,13 +36,16 @@
     <p>
       Seç bakalım rastgele mi, allah var mı, allah yok mu...:
       <select id="optionSelect">
-        <option value="random">Rastgele seçsin ustam</option>
+        <option value="random">Rastgele ver ustamm</option>
         <option value="allah var">allah var</option>
         <option value="allah yok">allah yok</option>
       </select>
     </p>
     <textarea id="inputBox" rows="10" cols="50"></textarea><br>
-    <button onclick="chooseLine()">Yap Bakalım Çekilişi Aslan Parçası!</button><br>
+    <button onclick="chooseLine()">Yap Bakalım Çekilişi Aslan Parçası</button><br>
     <p>Çekiliş Sonucu: <span id="chosenLine"></span></p>
+    <p>
+      <img id="gif" src="https://media.giphy.com/media/l0HlKvLZszs07jKfK/giphy.gif" width="500" height="500">
+    </p>
   </body>
 </html>
